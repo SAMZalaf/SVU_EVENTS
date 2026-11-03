@@ -722,7 +722,7 @@ if (copyAllNamesBtn) {
     for (let i = 1; i <= 4; i++) {
       const nameCell = document.getElementById("student-name-" + i);
       const idCell = document.getElementById("student-id-" + i);
-      allText = allText + i + " - " + nameCell.textContent + " - " + idCell.textContent + " - C4\n";
+      allText = allText + i + " - " + nameCell.textContent + " - " + idCell.textContent + " - C7\n";
     }
     navigator.clipboard.writeText(allText.trim());
     showAboutCopyMsg("تم نسخ جميع أسماء وأرقام الطلاب بنجاح!");
