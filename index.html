@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل فعاليات الجامعة الافتراضية</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Tajawal:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbarcolor sticky-top">
+            <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between gap-3">
+
+                <a href="index.html" class="navbar-brand m-0 p-0">
+                    <img src="assets/img/logos/logo.png" alt="SVU Logo" class="logo">
+                </a>
+
+                <div class="title-st-style">دليل فعاليات <span class="title-nd-style">الجامعة الافتراضية</span></div>
+
+                <div class="buttons-container-style">
+                    <a href="index.html" class="btn btn-primary">الرئيسية</a>
+                    <a href="events.html" class="btn btn-outline-primary">الفعاليات</a>
+                    <a href="events.html" id="nav-booking-link" class="btn btn-outline-primary">الحجز</a>
+                    <a href="contact.html" class="btn btn-outline-primary">اتصل بنا</a>
+                    <a href="about.html" class="btn btn-outline-primary">حول</a>
+                    <button class="btn" id="theme-mode-btn" type="button">🌑</button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        <button id="sticky-credit-button" class="btn btn-primary sticky-credit-button" data-bs-toggle="modal"
+            data-bs-target="#creditModal" type="button">
+            <span class="credit-icon">🧑‍💻</span><span class="ms-1 credit-text">الطلّاب المساهمون</span>
+        </button>
+    </div>
+
+    <main class="main-section">
+        <div class="main-container-style">
+            <div class="card-glow-border mb-4">
+                <div class="welcome-section text-center">
+                    <div class="welcome-img-box">
+                        <img src="assets/img/welcome_pic.png" alt="الجامعة الافتراضية السورية - اعبر حدود الزمان والمكان" class="welcome-img">
+                    </div>
+                    <div class="welcome-content-box">
+                        <span class="badge welcome-badge mb-2">بوابة الأنشطة الأكاديمية والطلابية</span>
+                        <h1 class="welcome-title">أهلاً بكم في دليل فعاليات الجامعة الافتراضية السورية</h1>
+                        <p class="welcome-text">منصة متكاملة تتيح لطلاب الجامعة متابعة أحدث الورشات العلمية، الأيام التفاعلية، المسابقات البرمجية، والندوات الأكاديمية في مكان واحد وبكل سهولة.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                            <a href="events.html" class="btn welcome-primary-btn">استكشف الفعاليات</a>
+                            <a href="about.html" class="btn welcome-secondary-btn">تعرف على الدليل</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-section-box mb-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <h2 class="section-title-style m-0">التصنيفات السريعة</h2>
+                    <div id="cat-buttons" class="d-flex flex-wrap align-items-center gap-2">
+                        <button id="cat-btn-1" type="button" class="btn cat-btn cat-btn-active" data-cat="all">الكل</button>
+                        <button id="cat-btn-2" type="button" class="btn cat-btn" data-cat="ورشات تقنية">ورشات تقنية</button>
+                        <button id="cat-btn-3" type="button" class="btn cat-btn" data-cat="ندوات أكاديمية">ندوات أكاديمية</button>
+                        <button id="cat-btn-4" type="button" class="btn cat-btn" data-cat="أيام تفاعلية">أيام تفاعلية</button>
+                        <button id="cat-btn-5" type="button" class="btn cat-btn" data-cat="حفلات جامعية">حفلات جامعية</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-section-box mb-4">
+                <div class="section-header-bar">
+                    <h2 class="section-title-style m-0">
+                        فعاليات بارزة هذا الأسبوع <span id="weekly-events-count" class="weekly-count-style">(8)</span>
+                    </h2>
+                </div>
+                <div id="weekly-events-container" class="weekly-showcase-row">
+                    <div id="week-card-1" class="d-none" data-cat="ندوات أكاديمية" data-date="2026-10-29">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event1.jpg" class="card-img-top event-card-img" alt="ندوة هندسة البرمجيات وإدارة المشاريع المعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ندوات أكاديمية</span>
+                                    <span class="event-date-text">📅 2026-10-29</span>
+                                </div>
+                                <h5 class="card-title event-card-title">ندوة هندسة البرمجيات وإدارة المشاريع المعلوماتية</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <a href="events.html#event1" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week-card-2" class="d-none" data-cat="ندوات أكاديمية" data-date="2026-10-30">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event5.jpg" class="card-img-top event-card-img" alt="ندوة تطوير تطبيقات الويب والتحول الرقمي">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ندوات أكاديمية</span>
+                                    <span class="event-date-text">📅 2026-10-30</span>
+                                </div>
+                                <h5 class="card-title event-card-title">ندوة تطوير تطبيقات الويب والتحول الرقمي</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex flex-column gap-2">
+                                <div class="d-flex justify-content-between align-items-center w-100">
+                                    <span class="event-location-text">📍 اللاذقية</span>
+                                    <a href="events.html#event5" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                                </div>
+                                <a href="event.html" class="btn btn-sm event-page-btn w-100">الانتقال لصفحة الحدث</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week-card-3" class="d-none" data-cat="ورشات تقنية" data-date="2026-10-31">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event2.jpg" class="card-img-top event-card-img" alt="ورشة عمل تقانات البرمجة وتحليل البيانات">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ورشات تقنية</span>
+                                    <span class="event-date-text">📅 2026-10-31</span>
+                                </div>
+                                <h5 class="card-title event-card-title">ورشة عمل تقانات البرمجة وتحليل البيانات</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <a href="events.html#event2" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week-card-4" class="weekly-side-item order-1" data-cat="حفلات جامعية" data-date="2026-11-01">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event7.jpg" class="card-img-top event-card-img" alt="الحفل السنوي لتخريج دفعة البرامج التقنية والمعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">حفلات جامعية</span>
+                                    <span class="event-date-text">📅 2026-11-01</span>
+                                </div>
+                                <h5 class="card-title event-card-title">الحفل السنوي لتخريج دفعة البرامج التقنية والمعلوماتية</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 اللاذقية</span>
+                                <a href="events.html#event7" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week-card-5" class="weekly-center-item order-2" data-cat="أيام تفاعلية" data-date="2026-11-02">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event3.jpg" class="card-img-top event-card-img" alt="اليوم التفاعلي لطلاب الهندسة المعلوماتية ITE">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">أيام تفاعلية</span>
+                                    <span class="event-date-text">📅 2026-11-02</span>
+                                </div>
+                                <h5 class="card-title event-card-title">اليوم التفاعلي لطلاب الهندسة المعلوماتية ITE</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <a href="events.html#event3" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week-card-6" class="weekly-side-item order-3" data-cat="حفلات جامعية" data-date="2026-11-04">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event4.jpg" class="card-img-top event-card-img" alt="حفل تخرج وتكريم أوائل الهندسة المعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">حفلات جامعية</span>
+                                    <span class="event-date-text">📅 2026-11-04</span>
+                                </div>
+                                <h5 class="card-title event-card-title">حفل تخرج وتكريم أوائل الهندسة المعلوماتية</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <a href="events.html#event4" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week-card-7" class="d-none" data-cat="أيام تفاعلية" data-date="2026-11-06">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event6.jpg" class="card-img-top event-card-img" alt="اللقاء العلمي لمشاريع الذكاء الاصطناعي والمعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">أيام تفاعلية</span>
+                                    <span class="event-date-text">📅 2026-11-06</span>
+                                </div>
+                                <h5 class="card-title event-card-title">اللقاء العلمي لمشاريع الذكاء الاصطناعي والمعلوماتية</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <a href="events.html#event6" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week-card-8" class="d-none" data-cat="ورشات تقنية" data-date="2026-11-07">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event8.jpg" class="card-img-top event-card-img" alt="ورشة التدريب على المسابقة البرمجية الجامعية SCPC">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ورشات تقنية</span>
+                                    <span class="event-date-text">📅 2026-11-07</span>
+                                </div>
+                                <h5 class="card-title event-card-title">ورشة التدريب على المسابقة البرمجية الجامعية SCPC</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 حلب</span>
+                                <a href="events.html#event8" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="weekly-nav-controls" class="d-flex justify-content-center align-items-center gap-3 mt-3">
+                    <button id="prev-weekly-btn" type="button" class="btn welcome-secondary-btn">السابق</button>
+                    <button id="next-weekly-btn" type="button" class="btn welcome-primary-btn">التالي</button>
+                </div>
+            </div>
+
+            <div class="page-section-box mb-4">
+                <div class="section-header-bar">
+                    <h2 class="section-title-style m-0">أحدث الفعاليات</h2>
+                </div>
+                <div id="latest-events-box" class="row g-4 mt-1">
+                    <div id="latest-card-1" class="col-12 col-sm-6 col-lg-3" data-cat="ورشات تقنية">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event8.jpg" class="card-img-top event-card-img" alt="ورشة التدريب على المسابقة البرمجية الجامعية SCPC">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ورشات تقنية</span>
+                                    <span class="event-date-text">📅 2026-11-07</span>
+                                </div>
+                                <h5 class="card-title event-card-title">ورشة التدريب على المسابقة البرمجية الجامعية SCPC</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 حلب</span>
+                                <a href="events.html#event8" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="latest-card-2" class="col-12 col-sm-6 col-lg-3" data-cat="أيام تفاعلية">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event6.jpg" class="card-img-top event-card-img" alt="اللقاء العلمي لمشاريع الذكاء الاصطناعي والمعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">أيام تفاعلية</span>
+                                    <span class="event-date-text">📅 2026-11-06</span>
+                                </div>
+                                <h5 class="card-title event-card-title">اللقاء العلمي لمشاريع الذكاء الاصطناعي والمعلوماتية</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <a href="events.html#event6" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="latest-card-3" class="col-12 col-sm-6 col-lg-3" data-cat="حفلات جامعية">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event4.jpg" class="card-img-top event-card-img" alt="حفل تخرج وتكريم أوائل الهندسة المعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">حفلات جامعية</span>
+                                    <span class="event-date-text">📅 2026-11-04</span>
+                                </div>
+                                <h5 class="card-title event-card-title">حفل تخرج وتكريم أوائل الهندسة المعلوماتية</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <a href="events.html#event4" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="latest-card-4" class="col-12 col-sm-6 col-lg-3" data-cat="أيام تفاعلية">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event3.jpg" class="card-img-top event-card-img" alt="اليوم التفاعلي لطلاب الهندسة المعلوماتية ITE">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">أيام تفاعلية</span>
+                                    <span class="event-date-text">📅 2026-11-02</span>
+                                </div>
+                                <h5 class="card-title event-card-title">اليوم التفاعلي لطلاب الهندسة المعلوماتية ITE</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <a href="events.html#event3" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="latest-card-5" class="col-12 col-sm-6 col-lg-3" data-cat="حفلات جامعية">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event7.jpg" class="card-img-top event-card-img" alt="الحفل السنوي لتخريج دفعة البرامج التقنية والمعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">حفلات جامعية</span>
+                                    <span class="event-date-text">📅 2026-11-01</span>
+                                </div>
+                                <h5 class="card-title event-card-title">الحفل السنوي لتخريج دفعة البرامج التقنية والمعلوماتية</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 اللاذقية</span>
+                                <a href="events.html#event7" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="latest-card-6" class="col-12 col-sm-6 col-lg-3" data-cat="ورشات تقنية">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event2.jpg" class="card-img-top event-card-img" alt="ورشة عمل تقانات البرمجة وتحليل البيانات">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ورشات تقنية</span>
+                                    <span class="event-date-text">📅 2026-10-31</span>
+                                </div>
+                                <h5 class="card-title event-card-title">ورشة عمل تقانات البرمجة وتحليل البيانات</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <a href="events.html#event2" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="latest-card-7" class="col-12 col-sm-6 col-lg-3" data-cat="ندوات أكاديمية">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event5.jpg" class="card-img-top event-card-img" alt="ندوة تطوير تطبيقات الويب والتحول الرقمي">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ندوات أكاديمية</span>
+                                    <span class="event-date-text">📅 2026-10-30</span>
+                                </div>
+                                <h5 class="card-title event-card-title">ندوة تطوير تطبيقات الويب والتحول الرقمي</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex flex-column gap-2">
+                                <div class="d-flex justify-content-between align-items-center w-100">
+                                    <span class="event-location-text">📍 اللاذقية</span>
+                                    <a href="events.html#event5" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                                </div>
+                                <a href="event.html" class="btn btn-sm event-page-btn w-100">الانتقال لصفحة الحدث</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="latest-card-8" class="col-12 col-sm-6 col-lg-3" data-cat="ندوات أكاديمية">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event1.jpg" class="card-img-top event-card-img" alt="ندوة هندسة البرمجيات وإدارة المشاريع المعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ندوات أكاديمية</span>
+                                    <span class="event-date-text">📅 2026-10-29</span>
+                                </div>
+                                <h5 class="card-title event-card-title">ندوة هندسة البرمجيات وإدارة المشاريع المعلوماتية</h5>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <a href="events.html#event1" class="btn btn-sm welcome-primary-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-section-box mb-4">
+                <div class="section-header-bar">
+                    <h2 class="section-title-style m-0">معرض الصور</h2>
+                </div>
+                <div class="gallery-box mt-3">
+                    <img id="gallery-img" src="assets/img/event1.jpg" alt="معرض صور فعاليات الجامعة" class="gallery-img">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button id="scroll-top-btn" class="btn btn-secondary rounded-circle position-fixed flex floating-button-bk-ttp d-none" type="button" title="العودة للأعلى">▲</button>
+        </div>
+
+        <div class="quick-menu-box">
+            <button class="quick-menu-btn" type="button" title="اختصارات سريعة">+</button>
+            <a href="events.html" id="quick-booking-link" class="quick-sub-btn quick-booking-pos">حجز</a>
+            <a href="contact.html" class="quick-sub-btn quick-contact-pos">اتصل بنا</a>
+        </div>
+    </main>
+
+    <footer class="footer-style">
+        <div class="container-fluid">
+            <div class="row py-2 gy-2">
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title-style">الموقع</h6>
+                    <ul class="list-unstyled footer-links-style mb-0">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="events.html">الفعاليات</a></li>
+                        <li><a href="events.html" id="footer-booking-link">الحجز</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title-style">حول الدليل</h6>
+                    <ul class="list-unstyled footer-links-style mb-0">
+                        <li><a href="about.html">حول</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title-style">مواقع صديقة</h6>
+                    <ul class="list-unstyled footer-links-style mb-0">
+                        <li><a href="http://www.damascusuniversity.edu.sy/" target="_blank">جامعة دمشق</a></li>
+                        <li><a href="https://latakia-univ.edu.sy/" target="_blank">جامعة اللاذقية</a></li>
+                        <li><a href="https://hiast.edu.sy/" target="_blank">المعهد العالي (HIAST)</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title-style">وسائل التواصل الاجتماعي</h6>
+                    <ul class="list-unstyled footer-links-style mb-0">
+                        <li><a href="https://www.facebook.com/svuonline.org/" target="_blank">فيسبوك</a></li>
+                        <li><a href="https://t.me/Syrianvirtualuniversity" target="_blank">تيليغرام</a></li>
+                        <li><a href="https://www.instagram.com/syrian_virtual_university/" target="_blank">إنستغرام</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom-style d-flex flex-wrap justify-content-between align-items-center gap-2 py-2">
+                <span class="d-flex flex-wrap align-items-center gap-3">
+                    <span>📍 دمشق - أوتستراد المزة</span>
+                    <span dir="ltr">📞 +963 11 2113469</span>
+                    <span dir="ltr">✉️ info@svuonline.org</span>
+                </span>
+                <span>© 2026 دليل فعاليات الجامعة الافتراضية السورية - جميع الحقوق محفوظة</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="creditModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">🧑‍💻الطلّاب المساهمون</h5>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-hover text-center credit-table-custom-style"
+                        id="students-names-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>الاسم</th>
+                                <th>الرقم الجامعي</th>
+                                <th>الصف</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>محمد</td>
+                                <td>mohamad_331734</td>
+                                <td>C4</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>رحمة</td>
+                                <td>rahma_344509</td>
+                                <td>C4</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>بيان</td>
+                                <td>bayan_307663</td>
+                                <td>C4</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>إسلام</td>
+                                <td>eslam_286595</td>
+                                <td>C4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="copy-alert" class="alert alert-success d-flex align-items-center gap-2 mt-3 mb-0 d-none"
+                    role="alert">
+                    <span>✅</span>
+                    <div>تم نسخ أسماء وأرقام الطلاب إلى الحافظة بنجاح!</div>
+                </div>
+                <div class="modal-footer">
+                    <button id="close-credit-modal-btn" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        data-bs-target="#creditModal">إغلاق</button>
+                    <button id="copy-names" type="button" class="btn btn-primary">نسخ 📄</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

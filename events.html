@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفعاليات - دليل فعاليات الجامعة الافتراضية</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Tajawal:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbarcolor">
+            <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between gap-3">
+
+                <a href="index.html" class="navbar-brand m-0 p-0">
+                    <img src="assets/img/logos/logo.png" alt="SVU Logo" class="logo">
+                </a>
+
+                <div class="title-st-style">دليل فعاليات <span class="title-nd-style">الجامعة الافتراضية</span></div>
+
+                <div class="buttons-container-style">
+                    <a href="index.html" class="btn btn-outline-primary">الرئيسية</a>
+                    <a href="events.html" class="btn btn-primary">الفعاليات</a>
+                    <a href="#bookingModal" id="nav-booking-btn" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">الحجز</a>
+                    <a href="contact.html" class="btn btn-outline-primary">اتصل بنا</a>
+                    <a href="about.html" class="btn btn-outline-primary">حول</a>
+                    <button class="btn" id="theme-mode-btn" type="button">🌑</button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div id="events-filter-bar" class="events-filter-bar mb-4">
+        <div class="main-container-style">
+            <div class="row g-2 align-items-center">
+                <div class="col-12 col-md-4 col-lg-4">
+                    <input type="text" id="search-input" class="form-control form-control-sm filter-input-style" placeholder="ابحث عن عنوان الفعالية أو الوصف...">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <select id="cat-select" class="form-select form-select-sm filter-input-style">
+                        <option value="all">كل التصنيفات</option>
+                        <option value="ورشات تقنية">ورشات تقنية</option>
+                        <option value="ندوات أكاديمية">ندوات أكاديمية</option>
+                        <option value="أيام تفاعلية">أيام تفاعلية</option>
+                        <option value="حفلات جامعية">حفلات جامعية</option>
+                    </select>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <select id="date-select" class="form-select form-select-sm filter-input-style">
+                        <option value="all">كل التواريخ</option>
+                        <option value="week">خلال هذا الأسبوع</option>
+                        <option value="upcoming">فعاليات قادمة</option>
+                        <option value="past">فعاليات سابقة</option>
+                    </select>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <select id="loc-select" class="form-select form-select-sm filter-input-style">
+                        <option value="all">كل المواقع</option>
+                        <option value="دمشق - مقر الجامعة">دمشق - مقر الجامعة</option>
+                        <option value="اللاذقية">اللاذقية</option>
+                        <option value="حلب">حلب</option>
+                    </select>
+                </div>
+                <div class="col-6 col-md-2 col-lg-2">
+                    <button type="button" id="reset-filter-btn" class="btn btn-sm welcome-primary-btn w-100">إعادة ضبط</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-section">
+        <div class="main-container-style">
+            <div class="page-section-box mb-4">
+                <div class="section-header-bar">
+                    <h2 class="section-title-style m-0">
+                        كل الفعاليات <span id="all-events-count" class="weekly-count-style">(8)</span>
+                    </h2>
+                </div>
+                <div id="all-events-box" class="row g-4 mt-1">
+                    <div id="event1" class="col-12 col-sm-6 col-lg-3 event-target-box" data-cat="ندوات أكاديمية" data-date="2026-10-29" data-loc="دمشق - مقر الجامعة">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event1.jpg" class="card-img-top event-card-img" alt="ندوة هندسة البرمجيات وإدارة المشاريع المعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ندوات أكاديمية</span>
+                                    <span id="event-date-1" class="event-date-text">📅 2026-10-29</span>
+                                </div>
+                                <h5 id="event-title-1" class="card-title event-card-title">ندوة هندسة البرمجيات وإدارة المشاريع المعلوماتية</h5>
+                                <p class="card-text event-card-desc">لقاء علمي لطلاب الهندسة المعلوماتية لمناقشة منهجيات هندسة البرمجيات وإعداد مشاريع التخرج بإشراف أساتذة القسم.</p>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <button type="button" class="btn btn-sm welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#eventModal1">التفاصيل</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="event2" class="col-12 col-sm-6 col-lg-3 event-target-box" data-cat="ورشات تقنية" data-date="2026-10-31" data-loc="دمشق - مقر الجامعة">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event2.jpg" class="card-img-top event-card-img" alt="ورشة عمل تقانات البرمجة وتحليل البيانات">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ورشات تقنية</span>
+                                    <span id="event-date-2" class="event-date-text">📅 2026-10-31</span>
+                                </div>
+                                <h5 id="event-title-2" class="card-title event-card-title">ورشة عمل تقانات البرمجة وتحليل البيانات</h5>
+                                <p class="card-text event-card-desc">ورشة تدريبية عملية للتعرف على استخدام الخوارزميات الحديثة والأدوات البرمجية في معالجة البيانات وتطوير الأنظمة.</p>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <button type="button" class="btn btn-sm welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#eventModal2">التفاصيل</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="event3" class="col-12 col-sm-6 col-lg-3 event-target-box" data-cat="أيام تفاعلية" data-date="2026-11-02" data-loc="دمشق - مقر الجامعة">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event3.jpg" class="card-img-top event-card-img" alt="اليوم التفاعلي لطلاب الهندسة المعلوماتية ITE">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">أيام تفاعلية</span>
+                                    <span id="event-date-3" class="event-date-text">📅 2026-11-02</span>
+                                </div>
+                                <h5 id="event-title-3" class="card-title event-card-title">اليوم التفاعلي لطلاب الهندسة المعلوماتية ITE</h5>
+                                <p class="card-text event-card-desc">يوم تفاعلي للتعريف بالمقررات البرمجية ومسارات التخصص ومناقشة أفكار مشاريع التخرج مع الكادر التدريسي.</p>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <button type="button" class="btn btn-sm welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#eventModal3">التفاصيل</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="event4" class="col-12 col-sm-6 col-lg-3 event-target-box" data-cat="حفلات جامعية" data-date="2026-11-04" data-loc="دمشق - مقر الجامعة">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event4.jpg" class="card-img-top event-card-img" alt="حفل تخرج وتكريم أوائل الهندسة المعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">حفلات جامعية</span>
+                                    <span id="event-date-4" class="event-date-text">📅 2026-11-04</span>
+                                </div>
+                                <h5 id="event-title-4" class="card-title event-card-title">حفل تخرج وتكريم أوائل الهندسة المعلوماتية</h5>
+                                <p class="card-text event-card-desc">احتفالية تقيمها الجامعة الافتراضية السورية لتكريم الخريجين والطلاب المتفوقين في برامج المعلوماتية وعلوم الحاسوب.</p>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <button type="button" class="btn btn-sm welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#eventModal4">التفاصيل</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="event5" class="col-12 col-sm-6 col-lg-3 event-target-box" data-cat="ندوات أكاديمية" data-date="2026-10-30" data-loc="اللاذقية">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event5.jpg" class="card-img-top event-card-img" alt="ندوة تطوير تطبيقات الويب والتحول الرقمي">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ندوات أكاديمية</span>
+                                    <span id="event-date-5" class="event-date-text">📅 2026-10-30</span>
+                                </div>
+                                <h5 id="event-title-5" class="card-title event-card-title">ندوة تطوير تطبيقات الويب والتحول الرقمي</h5>
+                                <p class="card-text event-card-desc">جلسة علمية تناقش أساسيات برمجة وتصميم مواقع الويب الحديثة وأدوات التطوير التفاعلي للمنصات الرقمية.</p>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex flex-column gap-2">
+                                <div class="d-flex justify-content-between align-items-center w-100">
+                                    <span class="event-location-text">📍 اللاذقية</span>
+                                    <button type="button" class="btn btn-sm welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#eventModal5">التفاصيل</button>
+                                </div>
+                                <a href="event.html" class="btn btn-sm event-page-btn w-100">الانتقال لصفحة الحدث</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="event6" class="col-12 col-sm-6 col-lg-3 event-target-box" data-cat="أيام تفاعلية" data-date="2026-11-06" data-loc="دمشق - مقر الجامعة">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event6.jpg" class="card-img-top event-card-img" alt="اللقاء العلمي لمشاريع الذكاء الاصطناعي والمعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">أيام تفاعلية</span>
+                                    <span id="event-date-6" class="event-date-text">📅 2026-11-06</span>
+                                </div>
+                                <h5 id="event-title-6" class="card-title event-card-title">اللقاء العلمي لمشاريع الذكاء الاصطناعي والمعلوماتية</h5>
+                                <p class="card-text event-card-desc">لقاء علمي مفتوح بمشاركة أساتذة الكلية لمناقشة تطبيقات الذكاء الاصطناعي وعلوم الحاسوب وتوجيه مشاريع الطلاب.</p>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 دمشق - مقر الجامعة</span>
+                                <button type="button" class="btn btn-sm welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#eventModal6">التفاصيل</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="event7" class="col-12 col-sm-6 col-lg-3 event-target-box" data-cat="حفلات جامعية" data-date="2026-11-01" data-loc="اللاذقية">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event7.jpg" class="card-img-top event-card-img" alt="الحفل السنوي لتخريج دفعة البرامج التقنية والمعلوماتية">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">حفلات جامعية</span>
+                                    <span id="event-date-7" class="event-date-text">📅 2026-11-01</span>
+                                </div>
+                                <h5 id="event-title-7" class="card-title event-card-title">الحفل السنوي لتخريج دفعة البرامج التقنية والمعلوماتية</h5>
+                                <p class="card-text event-card-desc">احتفالية جامعية بحضور الأهالي والهيئة التدريسية للاحتفاء بتخرج دفعة جديدة من طلاب الإجازة والماجستير في المعلوماتية.</p>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 اللاذقية</span>
+                                <button type="button" class="btn btn-sm welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#eventModal7">التفاصيل</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="event8" class="col-12 col-sm-6 col-lg-3 event-target-box" data-cat="ورشات تقنية" data-date="2026-11-07" data-loc="حلب">
+                        <div class="card h-100 event-card-style">
+                            <div class="event-card-img-box">
+                                <img src="assets/img/event8.jpg" class="card-img-top event-card-img" alt="ورشة التدريب على المسابقة البرمجية الجامعية SCPC">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge event-category-badge">ورشات تقنية</span>
+                                    <span id="event-date-8" class="event-date-text">📅 2026-11-07</span>
+                                </div>
+                                <h5 id="event-title-8" class="card-title event-card-title">ورشة التدريب على المسابقة البرمجية الجامعية SCPC</h5>
+                                <p class="card-text event-card-desc">تدريب عملي مكثف على حل المسائل الخوارزمية وهياكل البيانات لتأهيل الفرق الطلابية للمشاركة في المسابقات البرمجية.</p>
+                            </div>
+                            <div class="card-footer event-card-footer d-flex justify-content-between align-items-center">
+                                <span class="event-location-text">📍 حلب</span>
+                                <button type="button" class="btn btn-sm welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#eventModal8">التفاصيل</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="no-events-msg" class="alert alert-info mb-0 mt-3 d-none">
+                    لا توجد فعاليات مطابقة لخيارات البحث والتصفية الحالية.
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button id="scroll-top-btn" class="btn btn-secondary rounded-circle position-fixed flex floating-button-bk-ttp d-none" type="button" title="العودة للأعلى">▲</button>
+        </div>
+
+        <div class="quick-menu-box">
+            <button class="quick-menu-btn" type="button" title="اختصارات سريعة">+</button>
+            <a href="#bookingModal" id="quick-booking-btn" class="quick-sub-btn quick-booking-pos" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز</a>
+            <a href="contact.html" class="quick-sub-btn quick-contact-pos">اتصل بنا</a>
+        </div>
+    </main>
+
+    <footer class="footer-style">
+        <div class="container-fluid">
+            <div class="row py-2 gy-2">
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title-style">الموقع</h6>
+                    <ul class="list-unstyled footer-links-style mb-0">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="events.html">الفعاليات</a></li>
+                        <li><a href="#bookingModal" id="footer-booking-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">الحجز</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title-style">حول الدليل</h6>
+                    <ul class="list-unstyled footer-links-style mb-0">
+                        <li><a href="about.html">حول</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title-style">مواقع صديقة</h6>
+                    <ul class="list-unstyled footer-links-style mb-0">
+                        <li><a href="http://www.damascusuniversity.edu.sy/" target="_blank">جامعة دمشق</a></li>
+                        <li><a href="https://latakia-univ.edu.sy/" target="_blank">جامعة اللاذقية</a></li>
+                        <li><a href="https://hiast.edu.sy/" target="_blank">المعهد العالي (HIAST)</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title-style">وسائل التواصل الاجتماعي</h6>
+                    <ul class="list-unstyled footer-links-style mb-0">
+                        <li><a href="https://www.facebook.com/svuonline.org/" target="_blank">فيسبوك</a></li>
+                        <li><a href="https://t.me/Syrianvirtualuniversity" target="_blank">تيليغرام</a></li>
+                        <li><a href="https://www.instagram.com/syrian_virtual_university/" target="_blank">إنستغرام</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom-style d-flex flex-wrap justify-content-between align-items-center gap-2 py-2">
+                <span class="d-flex flex-wrap align-items-center gap-3">
+                    <span>📍 دمشق - أوتستراد المزة</span>
+                    <span dir="ltr">📞 +963 11 2113469</span>
+                    <span dir="ltr">✉️ info@svuonline.org</span>
+                </span>
+                <span>© 2026 دليل فعاليات الجامعة الافتراضية السورية - جميع الحقوق محفوظة</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="eventModal1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content event-modal-box">
+                <div class="modal-header event-modal-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="modal-logo-box">
+                            <img src="assets/img/logos/logo.png" alt="SVU Logo" class="modal-svu-logo">
+                        </div>
+                        <h5 class="modal-title event-modal-title m-0">ندوة هندسة البرمجيات وإدارة المشاريع المعلوماتية</h5>
+                    </div>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="modal-img-box mb-3">
+                        <img src="assets/img/event1.jpg" alt="ندوة هندسة البرمجيات وإدارة المشاريع المعلوماتية" class="modal-event-img">
+                    </div>
+                    <div class="modal-info-bar d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <span class="badge event-category-badge">ندوات أكاديمية</span>
+                        <span id="modal-date-1" class="modal-info-text">📅 2026-10-29</span>
+                        <span class="modal-info-text">📍 دمشق - مقر الجامعة</span>
+                    </div>
+                    <p class="event-card-desc mb-0">لقاء علمي لطلاب الهندسة المعلوماتية لمناقشة منهجيات هندسة البرمجيات وإعداد مشاريع التخرج بإشراف أساتذة القسم.</p>
+                </div>
+                <div class="modal-footer event-modal-footer d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button id="modal-book-btn-1" type="button" class="btn welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="eventModal2">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content event-modal-box">
+                <div class="modal-header event-modal-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="modal-logo-box">
+                            <img src="assets/img/logos/logo.png" alt="SVU Logo" class="modal-svu-logo">
+                        </div>
+                        <h5 class="modal-title event-modal-title m-0">ورشة عمل تقانات البرمجة وتحليل البيانات</h5>
+                    </div>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="modal-img-box mb-3">
+                        <img src="assets/img/event2.jpg" alt="ورشة عمل تقانات البرمجة وتحليل البيانات" class="modal-event-img">
+                    </div>
+                    <div class="modal-info-bar d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <span class="badge event-category-badge">ورشات تقنية</span>
+                        <span id="modal-date-2" class="modal-info-text">📅 2026-10-31</span>
+                        <span class="modal-info-text">📍 دمشق - مقر الجامعة</span>
+                    </div>
+                    <p class="event-card-desc mb-0">ورشة تدريبية عملية للتعرف على استخدام الخوارزميات الحديثة والأدوات البرمجية في معالجة البيانات وتطوير الأنظمة.</p>
+                </div>
+                <div class="modal-footer event-modal-footer d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button id="modal-book-btn-2" type="button" class="btn welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="eventModal3">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content event-modal-box">
+                <div class="modal-header event-modal-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="modal-logo-box">
+                            <img src="assets/img/logos/logo.png" alt="SVU Logo" class="modal-svu-logo">
+                        </div>
+                        <h5 class="modal-title event-modal-title m-0">اليوم التفاعلي لطلاب الهندسة المعلوماتية ITE</h5>
+                    </div>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="modal-img-box mb-3">
+                        <img src="assets/img/event3.jpg" alt="اليوم التفاعلي لطلاب الهندسة المعلوماتية ITE" class="modal-event-img">
+                    </div>
+                    <div class="modal-info-bar d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <span class="badge event-category-badge">أيام تفاعلية</span>
+                        <span id="modal-date-3" class="modal-info-text">📅 2026-11-02</span>
+                        <span class="modal-info-text">📍 دمشق - مقر الجامعة</span>
+                    </div>
+                    <p class="event-card-desc mb-0">يوم تفاعلي للتعريف بالمقررات البرمجية ومسارات التخصص ومناقشة أفكار مشاريع التخرج مع الكادر التدريسي.</p>
+                </div>
+                <div class="modal-footer event-modal-footer d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button id="modal-book-btn-3" type="button" class="btn welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="eventModal4">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content event-modal-box">
+                <div class="modal-header event-modal-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="modal-logo-box">
+                            <img src="assets/img/logos/logo.png" alt="SVU Logo" class="modal-svu-logo">
+                        </div>
+                        <h5 class="modal-title event-modal-title m-0">حفل تخرج وتكريم أوائل الهندسة المعلوماتية</h5>
+                    </div>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="modal-img-box mb-3">
+                        <img src="assets/img/event4.jpg" alt="حفل تخرج وتكريم أوائل الهندسة المعلوماتية" class="modal-event-img">
+                    </div>
+                    <div class="modal-info-bar d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <span class="badge event-category-badge">حفلات جامعية</span>
+                        <span id="modal-date-4" class="modal-info-text">📅 2026-11-04</span>
+                        <span class="modal-info-text">📍 دمشق - مقر الجامعة</span>
+                    </div>
+                    <p class="event-card-desc mb-0">احتفالية تقيمها الجامعة الافتراضية السورية لتكريم الخريجين والطلاب المتفوقين في برامج المعلوماتية وعلوم الحاسوب.</p>
+                </div>
+                <div class="modal-footer event-modal-footer d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button id="modal-book-btn-4" type="button" class="btn welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="eventModal5">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content event-modal-box">
+                <div class="modal-header event-modal-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="modal-logo-box">
+                            <img src="assets/img/logos/logo.png" alt="SVU Logo" class="modal-svu-logo">
+                        </div>
+                        <h5 class="modal-title event-modal-title m-0">ندوة تطوير تطبيقات الويب والتحول الرقمي</h5>
+                    </div>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="modal-img-box mb-3">
+                        <img src="assets/img/event5.jpg" alt="ندوة تطوير تطبيقات الويب والتحول الرقمي" class="modal-event-img">
+                    </div>
+                    <div class="modal-info-bar d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <span class="badge event-category-badge">ندوات أكاديمية</span>
+                        <span id="modal-date-5" class="modal-info-text">📅 2026-10-30</span>
+                        <span class="modal-info-text">📍 اللاذقية</span>
+                    </div>
+                    <p class="event-card-desc mb-0">جلسة علمية تناقش أساسيات برمجة وتصميم مواقع الويب الحديثة وأدوات التطوير التفاعلي للمنصات الرقمية.</p>
+                </div>
+                <div class="modal-footer event-modal-footer d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button id="modal-book-btn-5" type="button" class="btn welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="eventModal6">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content event-modal-box">
+                <div class="modal-header event-modal-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="modal-logo-box">
+                            <img src="assets/img/logos/logo.png" alt="SVU Logo" class="modal-svu-logo">
+                        </div>
+                        <h5 class="modal-title event-modal-title m-0">اللقاء العلمي لمشاريع الذكاء الاصطناعي والمعلوماتية</h5>
+                    </div>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="modal-img-box mb-3">
+                        <img src="assets/img/event6.jpg" alt="اللقاء العلمي لمشاريع الذكاء الاصطناعي والمعلوماتية" class="modal-event-img">
+                    </div>
+                    <div class="modal-info-bar d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <span class="badge event-category-badge">أيام تفاعلية</span>
+                        <span id="modal-date-6" class="modal-info-text">📅 2026-11-06</span>
+                        <span class="modal-info-text">📍 دمشق - مقر الجامعة</span>
+                    </div>
+                    <p class="event-card-desc mb-0">لقاء علمي مفتوح بمشاركة أساتذة الكلية لمناقشة تطبيقات الذكاء الاصطناعي وعلوم الحاسوب وتوجيه مشاريع الطلاب.</p>
+                </div>
+                <div class="modal-footer event-modal-footer d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button id="modal-book-btn-6" type="button" class="btn welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="eventModal7">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content event-modal-box">
+                <div class="modal-header event-modal-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="modal-logo-box">
+                            <img src="assets/img/logos/logo.png" alt="SVU Logo" class="modal-svu-logo">
+                        </div>
+                        <h5 class="modal-title event-modal-title m-0">الحفل السنوي لتخريج دفعة البرامج التقنية والمعلوماتية</h5>
+                    </div>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="modal-img-box mb-3">
+                        <img src="assets/img/event7.jpg" alt="الحفل السنوي لتخريج دفعة البرامج التقنية والمعلوماتية" class="modal-event-img">
+                    </div>
+                    <div class="modal-info-bar d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <span class="badge event-category-badge">حفلات جامعية</span>
+                        <span id="modal-date-7" class="modal-info-text">📅 2026-11-01</span>
+                        <span class="modal-info-text">📍 اللاذقية</span>
+                    </div>
+                    <p class="event-card-desc mb-0">احتفالية جامعية بحضور الأهالي والهيئة التدريسية للاحتفاء بتخرج دفعة جديدة من طلاب الإجازة والماجستير في المعلوماتية.</p>
+                </div>
+                <div class="modal-footer event-modal-footer d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button id="modal-book-btn-7" type="button" class="btn welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="eventModal8">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content event-modal-box">
+                <div class="modal-header event-modal-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="modal-logo-box">
+                            <img src="assets/img/logos/logo.png" alt="SVU Logo" class="modal-svu-logo">
+                        </div>
+                        <h5 class="modal-title event-modal-title m-0">ورشة التدريب على المسابقة البرمجية الجامعية SCPC</h5>
+                    </div>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="modal-img-box mb-3">
+                        <img src="assets/img/event8.jpg" alt="ورشة التدريب على المسابقة البرمجية الجامعية SCPC" class="modal-event-img">
+                    </div>
+                    <div class="modal-info-bar d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <span class="badge event-category-badge">ورشات تقنية</span>
+                        <span id="modal-date-8" class="modal-info-text">📅 2026-11-07</span>
+                        <span class="modal-info-text">📍 حلب</span>
+                    </div>
+                    <p class="event-card-desc mb-0">تدريب عملي مكثف على حل المسائل الخوارزمية وهياكل البيانات لتأهيل الفرق الطلابية للمشاركة في المسابقات البرمجية.</p>
+                </div>
+                <div class="modal-footer event-modal-footer d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button id="modal-book-btn-8" type="button" class="btn welcome-primary-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="bookingModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content event-modal-box">
+                <div class="modal-header event-modal-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="modal-logo-box">
+                            <img src="assets/img/logos/logo.png" alt="SVU Logo" class="modal-svu-logo">
+                        </div>
+                        <h5 class="modal-title event-modal-title m-0">حجز مقعد في فعالية</h5>
+                    </div>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <form id="booking-form" method="post" action="#">
+                        <table class="booking-name-table mb-3">
+                            <tr>
+                                <td>
+                                    <label for="first-name" class="form-label">الاسم الأول</label>
+                                    <input type="text" id="first-name" name="firstName" class="form-control filter-input-style" placeholder="الاسم الأول">
+                                </td>
+                                <td>
+                                    <label for="last-name" class="form-label">الاسم الثاني</label>
+                                    <input type="text" id="last-name" name="lastName" class="form-control filter-input-style" placeholder="الاسم الثاني">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="mb-3">
+                            <label for="book-email" class="form-label">البريد الإلكتروني</label>
+                            <input type="text" id="book-email" name="email" class="form-control filter-input-style" placeholder="name@example.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="book-phone" class="form-label">رقم الهاتف</label>
+                            <input type="text" id="book-phone" name="phone" class="form-control filter-input-style" placeholder="0900000000">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="book-cat-select" class="form-label">نوع الفعالية</label>
+                            <select id="book-cat-select" name="eventType" class="form-select filter-input-style">
+                                <option value="">اختر نوع الفعالية...</option>
+                                <option value="ورشات تقنية">ورشات تقنية</option>
+                                <option value="ندوات أكاديمية">ندوات أكاديمية</option>
+                                <option value="أيام تفاعلية">أيام تفاعلية</option>
+                                <option value="حفلات جامعية">حفلات جامعية</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="book-event-select" class="form-label">اسم الفعالية وتاريخها</label>
+                            <select id="book-event-select" name="eventName" class="form-select filter-input-style">
+                                <option value="">اختر الفعالية...</option>
+                                <option id="book-opt-1" value="event1" data-cat="ندوات أكاديمية" hidden>ندوة هندسة البرمجيات وإدارة المشاريع المعلوماتية - 2026-10-29</option>
+                                <option id="book-opt-2" value="event2" data-cat="ورشات تقنية" hidden>ورشة عمل تقانات البرمجة وتحليل البيانات - 2026-10-31</option>
+                                <option id="book-opt-3" value="event3" data-cat="أيام تفاعلية" hidden>اليوم التفاعلي لطلاب الهندسة المعلوماتية ITE - 2026-11-02</option>
+                                <option id="book-opt-4" value="event4" data-cat="حفلات جامعية" hidden>حفل تخرج وتكريم أوائل الهندسة المعلوماتية - 2026-11-04</option>
+                                <option id="book-opt-5" value="event5" data-cat="ندوات أكاديمية" hidden>ندوة تطوير تطبيقات الويب والتحول الرقمي - 2026-10-30</option>
+                                <option id="book-opt-6" value="event6" data-cat="أيام تفاعلية" hidden>اللقاء العلمي لمشاريع الذكاء الاصطناعي والمعلوماتية - 2026-11-06</option>
+                                <option id="book-opt-7" value="event7" data-cat="حفلات جامعية" hidden>الحفل السنوي لتخريج دفعة البرامج التقنية والمعلوماتية - 2026-11-01</option>
+                                <option id="book-opt-8" value="event8" data-cat="ورشات تقنية" hidden>ورشة التدريب على المسابقة البرمجية الجامعية SCPC - 2026-11-07</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="checkbox" id="student-check" name="isStudent">
+                            <label for="student-check">اختر هذا الخيار إذا كنت طالباً جامعياً</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="mb-1">
+                                <input type="radio" name="uniType" id="svu-radio" value="svu" disabled>
+                                <label for="svu-radio">طالب في الجامعة الافتراضية السورية</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="uniType" id="other-uni-radio" value="other" disabled>
+                                <label for="other-uni-radio">جامعة أخرى</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="seats-input" class="form-label">عدد المقاعد</label>
+                            <input type="number" id="seats-input" name="seats" class="form-control filter-input-style" min="1" value="1">
+                        </div>
+
+                        <div id="book-error-alert" class="alert alert-danger py-2 mb-3 d-none"></div>
+                        <div id="book-success-alert" class="alert alert-success py-2 mb-3 d-none">تم الحجز بنجاح</div>
+
+                        <div class="d-flex justify-content-end gap-2 pt-2 border-top">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                            <button type="submit" class="btn welcome-primary-btn">حجز</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
