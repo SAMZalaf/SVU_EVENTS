@@ -161,7 +161,13 @@ function showWeekCards() {
 
   for (let i = 0; i < weekCards.length; i++) {
     weekCards[i].classList.add("d-none");
-    weekCards[i].classList.remove("weekly-side-item", "weekly-center-item", "order-1", "order-2", "order-3");
+    weekCards[i].classList.remove(
+      "weekly-side-item",
+      "weekly-center-item",
+      "order-1",
+      "order-2",
+      "order-3",
+    );
   }
 
   if (activeWeekCards.length === 0) {
@@ -173,7 +179,10 @@ function showWeekCards() {
 
   if (activeWeekCards.length === 1) {
     activeWeekCards[0].classList.remove("d-none");
-    activeWeekCards[0].classList.add(getCardStyle(activeWeekCards[0], false), "order-1");
+    activeWeekCards[0].classList.add(
+      getCardStyle(activeWeekCards[0], false),
+      "order-1",
+    );
     if (navBox) {
       navBox.classList.add("d-none");
     }
@@ -182,10 +191,16 @@ function showWeekCards() {
 
   if (activeWeekCards.length === 2) {
     activeWeekCards[0].classList.remove("d-none");
-    activeWeekCards[0].classList.add(getCardStyle(activeWeekCards[0], false), "order-1");
+    activeWeekCards[0].classList.add(
+      getCardStyle(activeWeekCards[0], false),
+      "order-1",
+    );
 
     activeWeekCards[1].classList.remove("d-none");
-    activeWeekCards[1].classList.add(getCardStyle(activeWeekCards[1], false), "order-2");
+    activeWeekCards[1].classList.add(
+      getCardStyle(activeWeekCards[1], false),
+      "order-2",
+    );
 
     if (navBox) {
       navBox.classList.add("d-none");
@@ -211,7 +226,10 @@ function showWeekCards() {
   activeWeekCards[rightIndex].classList.add("weekly-side-item", "order-1");
 
   activeWeekCards[cardIndex].classList.remove("d-none");
-  activeWeekCards[cardIndex].classList.add(getCardStyle(activeWeekCards[cardIndex], true), "order-2");
+  activeWeekCards[cardIndex].classList.add(
+    getCardStyle(activeWeekCards[cardIndex], true),
+    "order-2",
+  );
 
   activeWeekCards[leftIndex].classList.remove("d-none");
   activeWeekCards[leftIndex].classList.add("weekly-side-item", "order-3");
@@ -226,7 +244,6 @@ function filterHomeByCat() {
       activeWeekCards.push(weekCards[i]);
     }
   }
-
   if (countText) {
     countText.textContent = "(" + activeWeekCards.length + ")";
   }
@@ -242,7 +259,9 @@ function filterHomeByCat() {
     if (diff < 0) {
       diff = -diff;
     }
-    if (minDiff === -1 || diff < minDiff || (diff === minDiff && cardDate >= todayText)) {
+    if (
+      minDiff === -1 ||  diff < minDiff ||(diff === minDiff && cardDate >= todayText)
+    ) {
       minDiff = diff;
       cardIndex = i;
     }
@@ -339,7 +358,7 @@ const pics = [
   "assets/img/event5.jpg",
   "assets/img/event6.jpg",
   "assets/img/event7.jpg",
-  "assets/img/event8.jpg"
+  "assets/img/event8.jpg",
 ];
 
 let picIndex = 0;
@@ -525,7 +544,11 @@ if (bookCatSelect && bookEventSelect) {
     });
   }
 
-  const directIds = ["nav-booking-btn", "quick-booking-btn", "footer-booking-btn"];
+  const directIds = [
+    "nav-booking-btn",
+    "quick-booking-btn",
+    "footer-booking-btn",
+  ];
 
   for (let i = 0; i < directIds.length; i++) {
     const btn = document.getElementById(directIds[i]);
@@ -584,8 +607,14 @@ if (bookingForm) {
 
     const atPos = emailVal.indexOf("@");
     const dotPos = emailVal.lastIndexOf(".");
-    if (atPos <= 0 || dotPos <= atPos + 1 || dotPos >= emailVal.length - 1 || emailVal.includes(" ")) {
-      bookErrorAlert.textContent = "يرجى إدخال بريد إلكتروني صحيح من الشكل name@example.com";
+    if (
+      atPos <= 0 ||
+      dotPos <= atPos + 1 ||
+      dotPos >= emailVal.length - 1 ||
+      emailVal.includes(" ")
+    ) {
+      bookErrorAlert.textContent =
+        "يرجى إدخال بريد إلكتروني صحيح من الشكل name@example.com";
       bookErrorAlert.classList.remove("d-none");
       return;
     }
@@ -597,8 +626,14 @@ if (bookingForm) {
       }
     }
 
-    if (phoneVal.length !== 10 || phoneVal[0] !== "0" || phoneVal[1] !== "9" || !onlyDigits) {
-      bookErrorAlert.textContent = "يرجى إدخال رقم هاتف مكون من 10 أرقام ويبدأ بـ 09";
+    if (
+      phoneVal.length !== 10 ||
+      phoneVal[0] !== "0" ||
+      phoneVal[1] !== "9" ||
+      !onlyDigits
+    ) {
+      bookErrorAlert.textContent =
+        "يرجى إدخال رقم هاتف مكون من 10 أرقام ويبدأ بـ 09";
       bookErrorAlert.classList.remove("d-none");
       return;
     }
@@ -635,7 +670,11 @@ if (bookingForm) {
   });
 }
 
-const openBookingIds = ["nav-booking-link", "quick-booking-link", "footer-booking-link"];
+const openBookingIds = [
+  "nav-booking-link",
+  "quick-booking-link",
+  "footer-booking-link",
+];
 
 for (let i = 0; i < openBookingIds.length; i++) {
   const link = document.getElementById(openBookingIds[i]);
@@ -672,7 +711,10 @@ if (bookingModalBox && localStorage.getItem("openBookingEvent") === "event5") {
     for (let i = 1; i <= 8; i++) {
       const opt = document.getElementById("book-opt-" + i);
       const card = document.getElementById("event" + i);
-      if (opt.getAttribute("data-cat") === specialCat && card.getAttribute("data-date") >= todayText) {
+      if (
+        opt.getAttribute("data-cat") === specialCat &&
+        card.getAttribute("data-date") >= todayText
+      ) {
         opt.hidden = false;
       } else {
         opt.hidden = true;
@@ -684,7 +726,6 @@ if (bookingModalBox && localStorage.getItem("openBookingEvent") === "event5") {
   const bookingModal = new bootstrap.Modal(bookingModalBox);
   bookingModal.show();
 }
-
 
 /* ======== About page copy student IDs ======== */
 
@@ -722,7 +763,14 @@ if (copyAllNamesBtn) {
     for (let i = 1; i <= 4; i++) {
       const nameCell = document.getElementById("student-name-" + i);
       const idCell = document.getElementById("student-id-" + i);
-      allText = allText + i + " - " + nameCell.textContent + " - " + idCell.textContent + " - C7\n";
+      allText =
+        allText +
+        i +
+        " - " +
+        nameCell.textContent +
+        " - " +
+        idCell.textContent +
+        " - C7\n";
     }
     navigator.clipboard.writeText(allText.trim());
     showAboutCopyMsg("تم نسخ جميع أسماء وأرقام الطلاب بنجاح!");
@@ -740,6 +788,8 @@ if (copyAllIdsBtn) {
     showAboutCopyMsg("تم نسخ جميع الأرقام الجامعية بنجاح!");
   });
 }
+
+
 
 /* ======== Contact form validation ======== */
 
@@ -763,16 +813,18 @@ if (contactForm) {
     const subjectVal = contactSubjectInput.value.trim();
     const msgVal = contactMessageInput.value.trim();
 
-    if (nameVal === "" || emailVal === "" || subjectVal === "" || msgVal === "") {
-      contactErrorAlert.textContent = "يرجى تعبئة جميع الحقول المطلوبة قبل الإرسال.";
+    if (nameVal === "" || emailVal === "" || subjectVal === "" ||  msgVal === "" ) {
+      contactErrorAlert.textContent =
+        "يرجى تعبئة جميع الحقول المطلوبة قبل الإرسال.";
       contactErrorAlert.classList.remove("d-none");
       return;
     }
 
     const atPos = emailVal.indexOf("@");
     const dotPos = emailVal.lastIndexOf(".");
-    if (atPos <= 0 || dotPos <= atPos + 1 || dotPos >= emailVal.length - 1 || emailVal.includes(" ")) {
-      contactErrorAlert.textContent = "يرجى إدخال بريد إلكتروني صحيح من الشكل name@example.com";
+    if ( atPos <= 0 ||     dotPos <= atPos + 1 ||   dotPos >= emailVal.length - 1 ||  emailVal.includes(" ")  ) {
+      contactErrorAlert.textContent =
+        "يرجى إدخال بريد إلكتروني صحيح من الشكل name@example.com";
       contactErrorAlert.classList.remove("d-none");
       return;
     }
@@ -807,7 +859,6 @@ function switchMapImage() {
 if (mapToggleBtn && mapSatImg) {
   mapToggleBtn.addEventListener("click", switchMapImage);
 }
-
 
 const addCalendarBtn = document.getElementById("add-calendar-btn");
 
